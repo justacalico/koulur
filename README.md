@@ -16,7 +16,7 @@ palettes, lock the shades you like, copy hex codes with a tap.
 Prebuilt binaries for every platform are attached to each
 [release](https://gitlab.com/HttpAnimations/koulur/-/releases) and never
 expire. The web build is also live on
-[GitLab Pages](https://httpanimations.gitlab.io/koulur/).
+[GitLab Pages](https://koulur-288b3e.gitlab.io/).
 
 | Platform | Package |
 |----------|---------|
@@ -32,7 +32,7 @@ expire. The web build is also live on
 Add the source in AltStore under Sources → +:
 
 ```
-https://httpanimations.gitlab.io/koulur/altstore/apps.json
+https://koulur-288b3e.gitlab.io/altstore/apps.json
 ```
 
 ## Build from source

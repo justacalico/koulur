@@ -27,7 +27,7 @@ fi
 VERSION="${RELEASE_TAG#v}"
 RELEASE_DATE=$(date -u +%Y-%m-%d)
 ICON_URL="https://gitlab.com/${CI_PROJECT_PATH}/-/raw/main/assets/icon-1024.png"
-SOURCE_URL="https://httpanimations.gitlab.io/koulur/altstore/apps.json"
+SOURCE_URL="https://koulur-288b3e.gitlab.io/altstore/apps.json"
 
 mkdir -p altstore
 cat > altstore/apps.json <<EOF
