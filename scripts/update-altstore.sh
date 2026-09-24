@@ -71,8 +71,9 @@ EOF
 
 git config user.name "GitLab CI"
 git config user.email "ci@gitlab.com"
-git fetch origin main "+refs/tags/*:refs/tags/*" || true
 git remote add gitlab-ssh "git@gitlab.com:${CI_PROJECT_PATH}.git" 2>/dev/null || true
+git fetch gitlab-ssh main
+git checkout -B main FETCH_HEAD
 
 git add altstore/apps.json
 if git diff --cached --quiet; then
@@ -81,5 +82,5 @@ if git diff --cached --quiet; then
 fi
 
 git commit -m "chore: 更新 AltStore 源"
-git push -o ci.skip gitlab-ssh HEAD:main
+git push -o ci.skip gitlab-ssh main:main
 echo "AltStore source updated for $RELEASE_TAG"
