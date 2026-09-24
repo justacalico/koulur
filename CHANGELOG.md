@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.1](https://gitlab.com/HttpAnimations/koulur/compare/b873076e6933041c85b387a8578f8659a210a32a..v0.1.1) - 2026-09-24
+#### Bug Fixes
+- 改用 Pages 唯一域名 - ([3eebc57](https://gitlab.com/HttpAnimations/koulur/commit/3eebc572ff70f4d5c342d5b29dfa0c35fed1686b)) - HttpAnimations
+#### Miscellaneous Chores
+- 更新 AltStore 源 - ([b873076](https://gitlab.com/HttpAnimations/koulur/commit/b873076e6933041c85b387a8578f8659a210a32a)) - GitLab CI
+
+- - -
+
 ## [v0.1.0](https://gitlab.com/HttpAnimations/koulur/compare/2b3d803b04f2345301751f9132814fa6d1f3e364..v0.1.0) - 2026-09-24
 #### Features
 - 添加自更新 AltStore 源 - ([d4c2d97](https://gitlab.com/HttpAnimations/koulur/commit/d4c2d97f35a0c337885093cd27c3a970a4a9d3a5)) - HttpAnimations
