@@ -27,6 +27,14 @@ expire. The web build is also live on
 | macOS    | dmg / zip (Apple Silicon) |
 | Web      | `web.tar.gz` |
 
+### AltStore
+
+Add the source in AltStore under Sources → +:
+
+```
+https://httpanimations.gitlab.io/koulur/altstore/apps.json
+```
+
 ## Build from source
 
 ```bash

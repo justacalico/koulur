@@ -1,0 +1,20 @@
+{
+  "name": "Koulur",
+  "identifier": "com.koulur.source",
+  "sourceURL": "https://httpanimations.gitlab.io/koulur/altstore/apps.json",
+  "apps": [
+    {
+      "name": "koulur",
+      "bundleIdentifier": "com.koulur.koulur",
+      "developerName": "HttpAnimations",
+      "subtitle": "Colour palette generator",
+      "localizedDescription": "Generate harmonious five-colour palettes, lock the shades you like and copy hex codes with a tap.",
+      "iconURL": "https://gitlab.com/HttpAnimations/koulur/-/raw/main/assets/icon-1024.png",
+      "tintedIconURL": "https://gitlab.com/HttpAnimations/koulur/-/raw/main/assets/icon-1024.png",
+      "category": "utilities",
+      "versions": [],
+      "appPermissions": {},
+      "news": []
+    }
+  ]
+}
