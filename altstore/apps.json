@@ -1,7 +1,7 @@
 {
   "name": "Koulur",
   "identifier": "com.koulur.source",
-  "sourceURL": "https://httpanimations.gitlab.io/koulur/altstore/apps.json",
+  "sourceURL": "https://koulur-288b3e.gitlab.io/altstore/apps.json",
   "apps": [
     {
       "name": "koulur",
