@@ -2,6 +2,32 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.1.0](https://gitlab.com/HttpAnimations/koulur/compare/2b3d803b04f2345301751f9132814fa6d1f3e364..v0.1.0) - 2026-09-24
+#### Features
+- 添加自更新 AltStore 源 - ([d4c2d97](https://gitlab.com/HttpAnimations/koulur/commit/d4c2d97f35a0c337885093cd27c3a970a4a9d3a5)) - HttpAnimations
+- 添加应用图标 - ([1827a42](https://gitlab.com/HttpAnimations/koulur/commit/1827a42384ae7fe9edaa496b5c9e85e457bc5e28)) - HttpAnimations
+- 初始化 Flutter 调色板生成器应用 - ([2b3d803](https://gitlab.com/HttpAnimations/koulur/commit/2b3d803b04f2345301751f9132814fa6d1f3e364)) - HttpAnimations
+#### Bug Fixes
+- 版本标签添加 v 前缀 - ([faed8f6](https://gitlab.com/HttpAnimations/koulur/commit/faed8f67c807adfc8382114adaf194691ae79a40)) - HttpAnimations
+- cog 检查忽略合并提交 - ([d89cf44](https://gitlab.com/HttpAnimations/koulur/commit/d89cf440d6a2a273b48cb6f7cb70098f021b4c7a)) - HttpAnimations
+- AltStore 更新基于最新 main 提交 - ([788e7d1](https://gitlab.com/HttpAnimations/koulur/commit/788e7d140e2701383b6b4d212bdc005d62f8c4bc)) - HttpAnimations
+- 修正 cog.toml 的 bump profile 字段名 - ([3d936e0](https://gitlab.com/HttpAnimations/koulur/commit/3d936e0f679b3dabb00f333dcc47455d5063f3ed)) - HttpAnimations
+- 复制颜色时不再阻塞等待剪贴板 - ([53a3c01](https://gitlab.com/HttpAnimations/koulur/commit/53a3c0154af674f0ceabcf60966ab5c138ec1923)) - HttpAnimations
+#### Documentation
+- 补充 AltStore 源安装说明 - ([8be32b8](https://gitlab.com/HttpAnimations/koulur/commit/8be32b8c3bcdb867fae7787b34f1c0eeddb29996)) - HttpAnimations
+#### Tests
+- 添加调色板测试并达到 100% 行覆盖 - ([9dfb472](https://gitlab.com/HttpAnimations/koulur/commit/9dfb47292a6ff2d9a747b8960e265fa2fd0c2d5d)) - HttpAnimations
+#### Build system
+- 添加 Android 发布签名配置 - ([40cdb89](https://gitlab.com/HttpAnimations/koulur/commit/40cdb89a48170c1e1b01d7e025d7d44f1dbebe64)) - HttpAnimations
+#### Continuous Integration
+- 兼容没有构建号的 pubspec 版本号 - ([020a343](https://gitlab.com/HttpAnimations/koulur/commit/020a343780e39316df225c4fd4e8f36c892c8892)) - HttpAnimations
+- 修复 lcov 未匹配文件时退出码非零 - ([c1dd090](https://gitlab.com/HttpAnimations/koulur/commit/c1dd0905b36ccea1667e389042e30873defae66a)) - HttpAnimations
+- 添加 GitLab 到 GitHub 再到 GitLab 的发布流水线 - ([b4b6aeb](https://gitlab.com/HttpAnimations/koulur/commit/b4b6aeb9a114e3837a5747ba2e5f130746890c53)) - HttpAnimations
+#### Miscellaneous Chores
+- (**version**) 0.1.0 - ([8acc3aa](https://gitlab.com/HttpAnimations/koulur/commit/8acc3aae4ae0e0cd4a98583394d3d600ebc8b8ac)) - GitLab CI
+
+- - -
+
 ## [0.1.0](https://gitlab.com/HttpAnimations/koulur/compare/2b3d803b04f2345301751f9132814fa6d1f3e364..0.1.0) - 2026-09-24
 #### Features
 - 添加自更新 AltStore 源 - ([d4c2d97](https://gitlab.com/HttpAnimations/koulur/commit/d4c2d97f35a0c337885093cd27c3a970a4a9d3a5)) - HttpAnimations
