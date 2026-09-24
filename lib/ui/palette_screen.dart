@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -35,9 +37,8 @@ class _PaletteScreenState extends State<PaletteScreen> {
     setState(() => _entries[index].locked = !_entries[index].locked);
   }
 
-  Future<void> _copy(PaletteEntry entry) async {
-    await Clipboard.setData(ClipboardData(text: entry.hex));
-    if (!mounted) return;
+  void _copy(PaletteEntry entry) {
+    unawaited(Clipboard.setData(ClipboardData(text: entry.hex)));
     ScaffoldMessenger.of(context)
       ..clearSnackBars()
       ..showSnackBar(
