@@ -14,18 +14,18 @@
       "category": "utilities",
       "versions": [
         {
-          "version": "0.1.0",
+          "version": "0.1.1",
           "date": "2026-09-24",
-          "downloadURL": "https://gitlab.com/api/v4/projects/86869846/packages/generic/release-assets/v0.1.0/koulur-ios-arm64-unsigned.ipa",
-          "size": 6386412,
+          "downloadURL": "https://gitlab.com/api/v4/projects/86869846/packages/generic/release-assets/v0.1.1/koulur-ios-arm64-unsigned.ipa",
+          "size": 6386411,
           "minOSVersion": "13.0"
         }
       ],
       "appPermissions": {},
       "news": [
         {
-          "identifier": "release-0.1.0",
-          "title": "koulur 0.1.0",
+          "identifier": "release-0.1.1",
+          "title": "koulur 0.1.1",
           "caption": "Latest release",
           "date": "2026-09-24",
           "notify": false
