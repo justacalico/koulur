@@ -34,10 +34,12 @@ void main() {
       }
     });
 
-    test('complementary includes hues ~180 apart', () {
+    test('complementary alternates hues ~180 apart', () {
       final entries = generator.generate(HarmonyMode.complementary);
-      final d = hueDistance(entries[0].hsv.hue, entries[2].hsv.hue);
-      expect(d, inInclusiveRange(168, 192));
+      for (var i = 1; i < entries.length; i += 2) {
+        final d = hueDistance(entries[i - 1].hsv.hue, entries[i].hsv.hue);
+        expect(d, inInclusiveRange(168, 192));
+      }
     });
 
     test('triadic includes hues ~120 apart', () {
@@ -81,16 +83,38 @@ void main() {
       final first = generator.generate(HarmonyMode.random);
       first[1].locked = true;
       first[3].locked = true;
-      final second = generator.generate(HarmonyMode.random, first);
+      final second = generator.generate(HarmonyMode.random, current: first);
       expect(identical(second[1], first[1]), isTrue);
       expect(identical(second[3], first[3]), isTrue);
       expect(identical(second[0], first[0]), isFalse);
     });
 
-    test('mismatched current list is ignored', () {
+    test('size controls the number of colours', () {
+      for (final mode in HarmonyMode.values) {
+        expect(generator.generate(mode, size: 3), hasLength(3));
+        expect(generator.generate(mode, size: 8), hasLength(8));
+      }
+    });
+
+    test('locked entries survive a resize', () {
+      final first = generator.generate(HarmonyMode.random);
+      first[1].locked = true;
+
+      final shrunk =
+          generator.generate(HarmonyMode.random, size: 3, current: first);
+      expect(shrunk, hasLength(3));
+      expect(identical(shrunk[1], first[1]), isTrue);
+
+      final grown =
+          generator.generate(HarmonyMode.random, size: 8, current: first);
+      expect(grown, hasLength(8));
+      expect(identical(grown[1], first[1]), isTrue);
+    });
+
+    test('unlocked entries are regenerated on resize', () {
       final short = [PaletteEntry(const HSVColor.fromAHSV(1, 0, 0, 0))];
-      short[0].locked = true;
-      final entries = generator.generate(HarmonyMode.random, short);
+      final entries =
+          generator.generate(HarmonyMode.random, current: short);
       expect(entries, hasLength(PaletteGenerator.paletteSize));
       expect(identical(entries[0], short[0]), isFalse);
     });

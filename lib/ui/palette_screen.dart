@@ -20,16 +20,25 @@ class _PaletteScreenState extends State<PaletteScreen> {
       widget.generator ?? PaletteGenerator();
 
   HarmonyMode _mode = HarmonyMode.analogous;
+  int _size = PaletteGenerator.paletteSize;
   late List<PaletteEntry> _entries = _generator.generate(_mode);
 
   void _shuffle() {
-    setState(() => _entries = _generator.generate(_mode, _entries));
+    setState(() =>
+        _entries = _generator.generate(_mode, size: _size, current: _entries));
   }
 
   void _setMode(HarmonyMode mode) {
     setState(() {
       _mode = mode;
-      _entries = _generator.generate(mode);
+      _entries = _generator.generate(mode, size: _size);
+    });
+  }
+
+  void _setSize(int size) {
+    setState(() {
+      _size = size;
+      _entries = _generator.generate(_mode, size: size, current: _entries);
     });
   }
 
@@ -65,7 +74,9 @@ class _PaletteScreenState extends State<PaletteScreen> {
               ),
             _ControlBar(
               mode: _mode,
+              size: _size,
               onModeChanged: _setMode,
+              onSizeChanged: _setSize,
               onShuffle: _shuffle,
             ),
           ],
@@ -126,12 +137,16 @@ class _ColourTile extends StatelessWidget {
 class _ControlBar extends StatelessWidget {
   const _ControlBar({
     required this.mode,
+    required this.size,
     required this.onModeChanged,
+    required this.onSizeChanged,
     required this.onShuffle,
   });
 
   final HarmonyMode mode;
+  final int size;
   final ValueChanged<HarmonyMode> onModeChanged;
+  final ValueChanged<int> onSizeChanged;
   final VoidCallback onShuffle;
 
   @override
@@ -160,7 +175,22 @@ class _ControlBar extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 4),
+            IconButton(
+              onPressed: size > PaletteGenerator.minPaletteSize
+                  ? () => onSizeChanged(size - 1)
+                  : null,
+              icon: const Icon(Icons.remove),
+              tooltip: 'Fewer colours',
+            ),
+            Text('$size'),
+            IconButton(
+              onPressed: size < PaletteGenerator.maxPaletteSize
+                  ? () => onSizeChanged(size + 1)
+                  : null,
+              icon: const Icon(Icons.add),
+              tooltip: 'More colours',
+            ),
             IconButton.filled(
               onPressed: onShuffle,
               icon: const Icon(Icons.shuffle),

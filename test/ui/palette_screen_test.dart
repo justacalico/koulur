@@ -89,4 +89,18 @@ void main() {
 
     expect(_hexes(tester), hasLength(PaletteGenerator.paletteSize));
   });
+
+  testWidgets('stepper changes the swatch count', (tester) async {
+    await tester.pumpWidget(_wrap(PaletteGenerator(random: Random(8))));
+
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
+    expect(_hexes(tester), hasLength(PaletteGenerator.paletteSize + 1));
+
+    await tester.tap(find.byIcon(Icons.remove));
+    await tester.pump();
+    await tester.tap(find.byIcon(Icons.remove));
+    await tester.pump();
+    expect(_hexes(tester), hasLength(PaletteGenerator.paletteSize - 1));
+  });
 }
