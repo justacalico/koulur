@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.0](https://gitlab.com/HttpAnimations/koulur/compare/7e0d8137a30eca2ea224530a2f15ece1d6126510..v0.2.0) - 2026-09-25
+#### Features
+- 支持自定义生成颜色数量 - ([ba009aa](https://gitlab.com/HttpAnimations/koulur/commit/ba009aadd4d06c137f1ee300707583ac4e4d06b3)) - HttpAnimations
+#### Bug Fixes
+- 提交检查改用 cog check - ([f54705f](https://gitlab.com/HttpAnimations/koulur/commit/f54705fd2ff9868134169123b6f12d5ec4a470ce)) - HttpAnimations
+- 提交检查只检查新提交 - ([1687243](https://gitlab.com/HttpAnimations/koulur/commit/168724396ae033030f415119210c3b1a000f85c3)) - HttpAnimations
+#### Miscellaneous Chores
+- 更新 AltStore 源 - ([7e0d813](https://gitlab.com/HttpAnimations/koulur/commit/7e0d8137a30eca2ea224530a2f15ece1d6126510)) - GitLab CI
+
+- - -
+
 ## [v0.1.1](https://gitlab.com/HttpAnimations/koulur/compare/b873076e6933041c85b387a8578f8659a210a32a..v0.1.1) - 2026-09-24
 #### Bug Fixes
 - 改用 Pages 唯一域名 - ([3eebc57](https://gitlab.com/HttpAnimations/koulur/commit/3eebc572ff70f4d5c342d5b29dfa0c35fed1686b)) - HttpAnimations
