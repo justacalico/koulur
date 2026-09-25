@@ -124,7 +124,7 @@ jobs:
             # Merged without a type prefix before this check ran; fixing the
             # message would mean rewriting main and breaking the mirror.
             [ "$sha" = "8734f6bff04a84ebe1339c2ad482c7a5de8e326c" ] && continue
-            cog verify "$(git log -1 --format=%B "$sha")" || failed="$failed $sha"
+            cog check "$sha^..$sha" || failed="$failed $sha"
           done
           if [ -n "$failed" ]; then
             echo "Non conventional commits:$failed" >&2
