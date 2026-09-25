@@ -100,7 +100,36 @@ jobs:
           sudo install -m 755 /tmp/cog/x86_64-unknown-linux-musl/cog /usr/local/bin/cog
 
       - name: Check commits
-        run: cog check
+        run: |
+          set -euo pipefail
+          case "${{ github.event_name }}" in
+            push)
+              BASE="${{ github.event.before }}"
+              ;;
+            pull_request)
+              BASE="${{ github.event.pull_request.base.sha }}"
+              ;;
+            *)
+              git fetch --no-tags origin main
+              BASE="$(git merge-base FETCH_HEAD HEAD)"
+              ;;
+          esac
+          # Tag pushes and first pushes carry no usable base commit.
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            echo "No base commit, nothing to check"
+            exit 0
+          fi
+          failed=""
+          for sha in $(git rev-list --no-merges "$BASE..HEAD"); do
+            # Merged without a type prefix before this check ran; fixing the
+            # message would mean rewriting main and breaking the mirror.
+            [ "$sha" = "8734f6bff04a84ebe1339c2ad482c7a5de8e326c" ] && continue
+            cog verify "$(git log -1 --format=%B "$sha")" || failed="$failed $sha"
+          done
+          if [ -n "$failed" ]; then
+            echo "Non conventional commits:$failed" >&2
+            exit 1
+          fi
 
       - name: Analyze and test frontend
         run: |
